@@ -1,0 +1,60 @@
+.home{
+  height: calc(100vh - 10rem);
+
+  .left-area{
+    h1{
+      max-width: 56rem;
+      font-family: "Ubuntu", sans-serif;
+      font-size: 5.4rem;
+      font-weight: bold;
+      line-height: 6.4rem;
+      color: $titulos;
+      margin-bottom: 2.4rem;
+    }
+
+    p{
+      max-width: 44.8rem;
+      font-size: 2.4rem;
+      color: $textos;
+      line-height: 3.8rem;
+      margin-bottom: 4rem;
+    }
+
+    button{
+      background: $greenpeace;
+      border: 0;
+      border-radius: 8px;
+      height: 7.2rem;
+      width: 34.8rem;
+      display: flex;
+      align-items: center;
+      transition: all .3s;
+
+      &:hover{
+        filter: brightness(.92);
+      }
+
+      .icon{
+        height: 7.2rem;
+        width: 7.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #2FB86E;
+        border-radius: 8px 0 0 8px;
+      }
+      span{
+        flex: 1;
+        text-align: center;
+        font-weight: bold;
+        color: $blocos;
+      }
+    }
+  }
+
+  .right-area{
+    img{
+      max-width: 100%;
+    }
+  }
+}

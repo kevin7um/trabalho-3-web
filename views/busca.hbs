@@ -1,0 +1,24 @@
+<main>
+  <div class="result-area">
+    <span><strong>{{quantidade}} pontos </strong>encontrados</span>
+
+      <div class="row g-2">
+        {{#each pontos}}
+          <div class="col ponto">
+            <div class="banner">
+              <img src="/images/Reciclagem.svg">
+            </div>
+            <div class="info">
+              <h3>{{entidade}}</h3>
+              <p>Resíduos Eletrônicos, Lâmpadas</p>
+              <span>
+                {{cidade}}, {{estado}} <br>
+                {{endereco}} <br>
+                Nº {{numero}}
+              </span>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+  </div>
+</main>

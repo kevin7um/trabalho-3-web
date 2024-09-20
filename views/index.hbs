@@ -1,9 +1,9 @@
-<main>
+<main class="home d-flex justify-content-between align-items-center">
   <div class="left-area">
-    <h1>Seu marketplace de coleta de resíduos.</h1>
+    <h1>Seu marketplace <br> de coleta de resíduos.</h1>
     <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
-    <button>
-      <span><img src="/images/IconBuscar.svg"></span>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#BuscarPontos">
+      <div class="icon"><img src="/images/IconBuscar.svg"></div>
       <span>Pesquisar pontos de coleta</span>
     </button>
   </div>
@@ -11,3 +11,32 @@
     <img src="/images/Pessoas.svg" alt="Coleta">
   </div>
 </main>
+
+<div class="modal fade" id="BuscarPontos" tabindex="-1" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title text-center">Pontos de Coleta</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="post">        
+          <div class="mb-4">
+            <label for="cidade-id" class="form-label">Cidade</label>
+            <input type="text" name="cidade" class="form-control" id="cidade-id" placeholder="Digite a cidade">
+          </div>
+          <div class="mb-4">
+            <label for="estado-id" class="form-label">Estado</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Selecione um Estado</option>
+              {{#each estados}}
+                <option value={{uf}}>{{uf}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <button type="submit" class="button p-3 w-100 mt-3">Buscar</button>        
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

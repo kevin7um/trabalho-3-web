@@ -1,0 +1,57 @@
+$greenpeace: #34CB79;
+$desaturado: #E1FAEC;
+$titulos: #322153;
+$textos: #6C6C80;
+$texto-suporte: #A0A0B2;
+$blocos: #FFFFFF;
+$background: #F0F0F5;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5% !important;
+}
+
+body{
+  background: $background !important;
+}
+
+body, button, textarea, input, select{
+  font-size: 1.6rem !important;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400;
+}
+
+
+
+button{
+  cursor: pointer;
+}
+
+header{
+  height: 10rem;
+
+  a{
+    text-decoration: none;
+    font-weight: 700;
+    color: $titulos;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.button{
+  background: $greenpeace;
+  border: 0;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  color: $blocos;
+
+}
