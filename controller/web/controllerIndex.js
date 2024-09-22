@@ -1,3 +1,5 @@
+const express = require('express')
+const app = express();
 
 exports.home = function(req, res){
   const estados = [
@@ -68,4 +70,29 @@ exports.busca = function(req, res){
   }
 
   res.render('busca', contexto);
+}
+
+exports.busca_post = async function(req, res){
+  // const dados = req.body;
+
+  const dados = {
+    cidade: req.body.cidade,
+    estado: req.body.estado
+  }
+
+  const pontos = await fetch("http://10.0.0.153:3000/api/busca", {
+    method: "POST",
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(dados)
+  }).then(res => res.json())
+
+  const contexto = {
+    titulo: "Resultado de Busca",
+    pontos: pontos,
+    quantidade: pontos.length
+  }
+
+  res.render('busca', contexto)
 }

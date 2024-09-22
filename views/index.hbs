@@ -20,17 +20,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="" method="post">        
+        <form action="/busca" method="post">        
           <div class="mb-4">
             <label for="cidade-id" class="form-label">Cidade</label>
             <input type="text" name="cidade" class="form-control" id="cidade-id" placeholder="Digite a cidade">
           </div>
           <div class="mb-4">
             <label for="estado-id" class="form-label">Estado</label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="estado" aria-label="Default select example">
               <option selected>Selecione um Estado</option>
               {{#each estados}}
-                <option value={{uf}}>{{uf}}</option>
+                <option value="{{uf}}">{{uf}}</option>
               {{/each}}
             </select>
           </div>

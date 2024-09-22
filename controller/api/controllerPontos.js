@@ -3,6 +3,8 @@ const database = require("../../model/ecoletaMongo")
 exports.busca = async function(req, res){
   const dados = req.body;
 
+  console.log(req.body)
+
   const pontos = await database.busca(dados);
   
   res.json(pontos)
