@@ -1,3 +1,5 @@
+const express = require('express')
+const app = express();
 
 exports.home = function(req, res){
   const estados = [
@@ -38,34 +40,28 @@ exports.home = function(req, res){
   res.render('index', contexto);
 }
 
-exports.busca = function(req, res){
+exports.busca = async function(req, res){
+  // const dados = req.body;
 
-  const ponto = [
-    {
-      entidade: "Coletoria",
-      endereco: "Avenida JK, Realeza",
-      cidade: "Manhuaçu",
-      estado: "Minas Gerais",
-      numero: 150,
-      itens: ["Resíduos Eletrônicos", "Lâmpadas"]
-    },
-
-    {
-      entidade: "Papersider",
-      endereco: "Rua da Matriz, Realeza",
-      cidade: "Manhuaçu",
-      estado: "Minas Gerais",
-      numero: 100,
-      itens: ["Papel", "Papelão"]
-    },
-
-  ]
-
-  const contexto = {
-    titulo: "Pontos de coletas encontrados",
-    pontos: ponto,
-    quantidade: ponto.length,
+  const dados = {
+    cidade: req.body.cidade,
+    estado: req.body.estado
   }
 
-  res.render('busca', contexto);
+  const pontos = await fetch("http://10.0.0.153:3000/api/busca", {
+    method: "POST",
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(dados)
+  }).then(res => res.json())
+
+  const contexto = {
+    titulo: "Resultado de Busca",
+    pontos: pontos,
+    quantidade: pontos.length,
+    link: "/"
+  }
+
+  res.render('busca', contexto)
 }

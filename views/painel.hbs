@@ -1,3 +1,35 @@
 <main>
-  
+  <div class="row border">
+    <div class="col">
+      <strong>Entidade</strong>
+    </div>
+    <div class="col">
+      <strong>Cidade</strong>
+    </div>
+    <div class="col">
+      <strong>Estado</strong>
+    </div>
+    <div class="col">
+      <strong>Ação</strong>
+    </div>
+  </div>
+
+  {{#each pontos}}
+    <div class="row border">
+      <div class="col">
+        {{entidade}}
+      </div>
+      <div class="col">
+        {{cidade}}
+      </div>
+      <div class="col">
+        {{estado}}
+      </div>
+      <div class="col">
+        <a href="http://localhost:3000/admin/altera/{{_id}}">Alterar</a>
+        | 
+        <a href="http://localhost:3000/admin/deleta/{{_id}}">Deletar</a>
+      </div>
+    </div>
+  {{/each}}
 </main>

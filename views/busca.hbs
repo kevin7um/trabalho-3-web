@@ -10,13 +10,20 @@
             </div>
             <div class="info">
               <h3>{{entidade}}</h3>
-              <p>Resíduos Eletrônicos, Lâmpadas</p>
+              <p>
+                {{itens}}
+              </p>
               <span>
                 {{cidade}}, {{estado}} <br>
                 {{endereco}} <br>
                 Nº {{numero}}
               </span>
             </div>
+          </div>
+          {{else}}
+          <div class="text-center">
+            <h2>Nenhum ponto de Coleta encontrado</h2>
+            <p>Tente buscar por outra cidade ou estado!</p>
           </div>
         {{/each}}
       </div>

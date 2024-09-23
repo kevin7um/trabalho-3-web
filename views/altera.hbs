@@ -1,28 +1,28 @@
 <main class="form-cadastro">
-  <h1 class="mt-5">Cadastro do ponto de coleta</h1>
+  <h1 class="mt-5">Alteração de dados do ponto de coleta</h1>
   
-  <form action="cadastro" method="post" class="row g-3">
+  <form action="altera" method="post" class="row g-3">
     <h3 class="my-5">Dados da entidade</h3>
     <div class="col-12">
       <label for="entidade" class="form-label">Nome da entidade</label>
-      <input type="text" class="form-control" id="entidade" name="entidade">
+      <input type="text" class="form-control" id="entidade" name="entidade" value="{{ponto.entidade}}">
     </div>
     <div class="col-md-6">
       <label for="endereco" class="form-label">Endereço</label>
-      <input type="text" class="form-control" id="endereco" name="endereco">
+      <input type="text" class="form-control" id="endereco" name="endereco" value="{{ponto.endereco}}">
     </div>
     <div class="col-md-6">
       <label for="numero" class="form-label">Número</label>
-      <input type="number" class="form-control" id="numero" name="numero">
+      <input type="number" class="form-control" id="numero" name="numero"value="{{ponto.numero}}">
     </div>
     <div class="col-md-6">
       <label for="cidade" class="form-label">Cidade</label>
-      <input type="text" class="form-control" id="cidade" name="cidade">
+      <input type="text" class="form-control" id="cidade" name="cidade" value="{{ponto.cidade}}">
     </div>
     <div class="col-md-6">
       <label for="estado" class="form-label">Estado</label>
       <select id="estado" name="estado" class="form-select">
-        <option selected>Selecione um estado</option>
+        <option value="{{ponto.estado}}" selected>{{ponto.estado}}</option>
         {{#each estados}}
           <option value="{{uf}}">{{uf}}</option>
         {{/each}}
@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="col-12 mt-5 text-end">
-      <button type="submit" class="button">Cadastrar ponto de coleta</button>
+      <button type="submit" class="button">Alterar ponto de coleta</button>
     </div>
   </form>
 </main>
