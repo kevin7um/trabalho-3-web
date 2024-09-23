@@ -30,7 +30,7 @@ const estados = [
 
 exports.painel = async function(req, res){
 
-  const pontos = await fetch("http://10.0.0.153:3000/api")
+  const pontos = await fetch("http://localhost:3000/api")
   .then(res => res.json())
 
   const contexto = {
@@ -56,7 +56,7 @@ exports.cadastro_get = function(req, res){
 exports.cadastro_post = async function(req, res){
   const dados = req.body
 
-  await fetch("http://10.0.0.153:3000/api/cadastro", {
+  await fetch("http://localhost:3000/api/cadastro", {
     method: "POST",
     headers: {
       'content-type': 'application/json'
@@ -64,16 +64,14 @@ exports.cadastro_post = async function(req, res){
     body: JSON.stringify(dados)
   })
 
-  res.redirect('painel')
+  res.redirect('/admin')
 }
 
 exports.altera_get = async function(req, res){
   const id = req.params.id
   
-  const ponto = await fetch(`http://10.0.0.153:3000/api/consulta/${id}`)
+  const ponto = await fetch(`http://localhost:3000/api/consulta/${id}`)
   .then(res => res.json())
-
-  console.log(ponto.entidade)
   
   const contexto = {
     titulo: "Alterar dados do Ponto de Coleta",
@@ -89,7 +87,7 @@ exports.altera_post = async function(req, res) {
   const id = req.params.id
   const dados = req.body;
 
-  await fetch(`http://10.0.0.153:3000/api/altera/${id}`, {
+  await fetch(`http://localhost:3000/api/altera/${id}`, {
     method: "PUT",
     headers: {
       'content-type': 'application/json'
@@ -97,15 +95,15 @@ exports.altera_post = async function(req, res) {
     body: JSON.stringify(dados)
   })
 
-  res.render('painel')
+  res.redirect('/admin')
 }
 
 exports.deleta = async function(req, res) {
   const id = req.params.id
 
-  await fetch(`http://10.0.0.153:3000/api/deleta/${id}`, {
+  await fetch(`http://localhost:3000/api/deleta/${id}`, {
     method: "DELETE"
   })
 
-  res.render('painel')
+  res.redirect('/admin')
 }

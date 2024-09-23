@@ -1,7 +1,7 @@
 <main class="form-cadastro">
   <h1 class="mt-5">Alteração de dados do ponto de coleta</h1>
   
-  <form action="altera" method="post" class="row g-3">
+  <form action="" method="post" class="row g-3">
     <h3 class="my-5">Dados da entidade</h3>
     <div class="col-12">
       <label for="entidade" class="form-label">Nome da entidade</label>
@@ -40,6 +40,9 @@
             name="itens" 
             value="Lâmpadas"
             autocomplete="off"
+            {{#each ponto.itens}}
+              {{#if (confereIgual this "Lâmpadas")}} checked {{/if}}
+            {{/each}}
           >
           <label class="btn iten_coleta" for="btn-check-1">
             <img src="/images/Lampadas.svg">
@@ -54,6 +57,9 @@
             name="itens" 
             value="Pilhas e Baterias"
             autocomplete="off"
+            {{#each ponto.itens}}
+              {{#if (confereIgual this "Pilhas e Baterias")}} checked {{/if}}
+            {{/each}}
           >
           <label class="btn iten_coleta" for="btn-check-2">
             <img src="/images/Baterias.svg">
@@ -68,6 +74,9 @@
             name="itens" 
             value="Papéis e Papelão"
             autocomplete="off"
+            {{#each ponto.itens}}
+              {{#if (confereIgual this "Papéis e Papelão")}} checked {{/if}}
+            {{/each}}
           >
           <label class="btn iten_coleta" for="btn-check-3">
             <img src="/images/Papeis.svg">
@@ -82,6 +91,9 @@
             name="itens" 
             value="Resíduos Eletrônicos"
             autocomplete="off"
+            {{#each ponto.itens}}
+              {{#if (confereIgual this "Resíduos Eletrônicos")}} checked {{/if}}
+            {{/each}}
           >
           <label class="btn iten_coleta" for="btn-check-4">
             <img src="/images/Eletrônicos.svg">
@@ -96,6 +108,9 @@
             name="itens" 
             value="Resíduos Orgânicos"
             autocomplete="off"
+            {{#each ponto.itens}}
+              {{#if (confereIgual this "Resíduos Orgânicos")}} checked {{/if}}
+            {{/each}}
           >
           <label class="btn iten_coleta" for="btn-check-5">
             <img src="/images/Organicos.svg">
@@ -110,6 +125,9 @@
             name="itens" 
             value="Óleo de Cozinha"
             autocomplete="off"
+            {{#each ponto.itens}}
+              {{#if (confereIgual this "Óleo de Cozinha")}} checked {{/if}}
+            {{/each}}
           >
           <label class="btn iten_coleta" for="btn-check-6">
             <img src="/images/Óleo.svg">

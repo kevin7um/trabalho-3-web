@@ -1,5 +1,13 @@
 <main>
-  <div class="row border">
+  <div class="row mt-5 align-items-center">
+    <div class="col-8">
+      <h1>Painel Administrativo</h1>
+    </div>
+    <div class="col-4">
+      <a class="mt-3 button btn-new" href="admin/cadastro">Cadastrar nova Entidade</a>
+    </div>
+  </div>
+  <div class="row border mt-5">
     <div class="col">
       <strong>Entidade</strong>
     </div>
@@ -26,9 +34,9 @@
         {{estado}}
       </div>
       <div class="col">
-        <a href="http://localhost:3000/admin/altera/{{_id}}">Alterar</a>
+        <a href="admin/altera/{{_id}}">Alterar</a>
         | 
-        <a href="http://localhost:3000/admin/deleta/{{_id}}">Deletar</a>
+        <a href="admin/deleta/{{_id}}">Deletar</a>
       </div>
     </div>
   {{/each}}
