@@ -1,0 +1,125 @@
+<main class="form-cadastro">
+  <h1 class="mt-5">Cadastro do ponto de coleta</h1>
+  
+  <form action="cadastro" method="post" class="row g-3">
+    <h3 class="my-5">Dados da entidade</h3>
+    <div class="col-12">
+      <label for="entidade" class="form-label">Nome da entidade</label>
+      <input type="text" class="form-control" id="entidade" name="entidade">
+    </div>
+    <div class="col-md-6">
+      <label for="endereco" class="form-label">Endereço</label>
+      <input type="text" class="form-control" id="endereco" name="endereco">
+    </div>
+    <div class="col-md-6">
+      <label for="numero" class="form-label">Número</label>
+      <input type="number" class="form-control" id="numero" name="numero">
+    </div>
+    <div class="col-md-6">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="cidade" name="cidade">
+    </div>
+    <div class="col-md-6">
+      <label for="estado" class="form-label">Estado</label>
+      <select id="estado" name="estado" class="form-select">
+        <option selected>Selecione um estado</option>
+        {{#each estados}}
+          <option value={{uf}}>{{uf}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="col-12">
+      <h3 class="my-5">Itens de coleta</h3>
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-4">
+          <input 
+            type="checkbox" 
+            class="btn-check" 
+            id="btn-check-1" 
+            name="itens" 
+            value="Lâmpadas"
+            autocomplete="off"
+          >
+          <label class="btn iten_coleta" for="btn-check-1">
+            <img src="/images/Lampadas.svg">
+            Lâmpadas
+          </label>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <input 
+            type="checkbox" 
+            class="btn-check" 
+            id="btn-check-2" 
+            name="itens" 
+            value="Pilhas e Baterias"
+            autocomplete="off"
+          >
+          <label class="btn iten_coleta" for="btn-check-2">
+            <img src="/images/Baterias.svg">
+            Pilhas e Baterias
+          </label>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <input 
+            type="checkbox" 
+            class="btn-check" 
+            id="btn-check-3" 
+            name="itens" 
+            value="Papéis e Papelão"
+            autocomplete="off"
+          >
+          <label class="btn iten_coleta" for="btn-check-3">
+            <img src="/images/Papeis.svg">
+            Papéis e Papelão
+          </label>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <input 
+            type="checkbox" 
+            class="btn-check" 
+            id="btn-check-4" 
+            name="itens" 
+            value="Resíduos Eletrônicos"
+            autocomplete="off"
+          >
+          <label class="btn iten_coleta" for="btn-check-4">
+            <img src="/images/Eletrônicos.svg">
+            Resíduos Eletrônicos
+          </label>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <input 
+            type="checkbox" 
+            class="btn-check" 
+            id="btn-check-5" 
+            name="itens" 
+            value="Resíduos Orgânicos"
+            autocomplete="off"
+          >
+          <label class="btn iten_coleta" for="btn-check-5">
+            <img src="/images/Organicos.svg">
+            Resíduos Orgânicos
+          </label>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <input 
+            type="checkbox" 
+            class="btn-check" 
+            id="btn-check-6" 
+            name="itens" 
+            value="Óleo de Cozinha"
+            autocomplete="off"
+          >
+          <label class="btn iten_coleta" for="btn-check-6">
+            <img src="/images/Óleo.svg">
+            Óleo de Cozinha
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-5 text-end">
+      <button type="submit" class="button">Cadastrar ponto de coleta</button>
+    </div>
+  </form>
+</main>

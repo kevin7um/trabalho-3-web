@@ -1,0 +1,40 @@
+.form-cadastro{
+  background: $blocos;
+  width: 100%;
+  max-width: 73.6rem;
+  border-radius: 8px;
+  margin: 5.6rem auto;
+  padding: 6.4rem;
+
+  .iten_coleta{
+    margin: 0 auto;
+    height: 18.4rem;
+    border: 0;
+    border-radius: 8px;
+    outline: none;
+  
+    background: $desaturado !important;
+  
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 1rem;
+  
+    font-size: 1.6rem !important;
+    color: $titulos !important;
+    
+  }
+  
+  .btn-check:checked+.btn{
+    background: $greenpeace  !important;
+    border: 0;
+    outline: none;
+  }
+
+  button[type='submit']{
+    padding: 1.8rem 4rem;
+    font-weight: bold;
+    // color: b;
+  }
+}
